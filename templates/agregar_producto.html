@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agregar Productos</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Agregar Producto</h1>
+        <form action="/agregar_producto" method="POST" enctype="multipart/form-data" id="productForm">
+            <div class="form-group">
+                <label for="nombre_producto">Nombre del Producto:</label>
+                <input type="text" class="form-control" name="nombre_producto" id="nombre_producto" required>
+            </div>
+
+            <div class="form-group">
+                <label for="negocio_id">Negocio:</label>
+                <select class="form-control" name="negocio_id" id="negocio_id" required>
+                    {% for negocio in negocios %}
+                        <option value="{{ negocio.id }}">{{ negocio.nombre }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div id="variations">
+                <h2>Variaciones</h2>
+                <div class="form-group variation">
+                    <label for="variation_name">Nombre de la Variación:</label>
+                    <input type="text" class="form-control" name="variation[name][]" required>
+
+                    <label for="variation_price">Precio de la Variación:</label>
+                    <input type="number" class="form-control" name="variation[price][]" step="0.01" required>
+
+                    <label for="variation_description">Descripción de la Variación:</label>
+                    <textarea class="form-control" name="variation[description][]" required></textarea>
+
+                    <label for="variation_image">Imagen de la Variación:</label>
+                    <input type="file" class="form-control-file" name="variation[image][]" accept="image/*" required>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="addVariation">Agregar Variación</button><br><br>
+
+            <input type="submit" class="btn btn-success" value="Guardar Producto">
+        </form>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#addVariation").click(function() {
+                var newVariation = $(".variation").first().clone();
+                newVariation.find("input, textarea").val("");
+                $("#variations").append(newVariation);
+            });
+        });
+    </script>
+</body>
+</html>

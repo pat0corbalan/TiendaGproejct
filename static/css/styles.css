@@ -1,0 +1,190 @@
+/* Estilos base */
+body {
+    background-color: white;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: white;
+    margin:0
+}
+
+/* Estilos para el contenedor principal */
+header {
+    margin: 0;
+    padding: 0; 
+    color: white;
+    overflow: hidden;
+    z-index: 1;
+    margin: 0;
+    width: 100vw;
+    height: 58vh;
+    position: relative;
+}
+
+.fondo img {
+    margin:auto;
+    position:absolute; 
+    color:transparent;
+    bottom: -30%; 
+    z-index: 2;
+}
+
+.sheader strong{
+    padding: 0;
+    color: #4CAF50;
+}
+
+.sheader{
+    margin-top:5px;
+    padding-top: 15px;
+    position: relative; 
+    width: 100vw;
+    z-index: 3;
+    color:#fff
+}
+.sheader div{
+    margin:0;
+    padding: 0;
+    position: relative; 
+    width: 100vw;
+    z-index: 3;
+    color:#fff
+}
+/* Estilos para el círculo */
+.circle {
+    padding:0;
+    width: 140px; /* Utilizamos unidades relativas para el tamaño del círculo */
+    height: 140px;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+/* Estilos para el texto en negrita */
+strong {
+    padding: 0;
+    color: #4CAF50;
+}
+
+/* Estilos para el título */
+h1 {
+    font-family: Montserrat, sans-serif;
+
+    letter-spacing: 0.1px; /* Utilizamos unidades relativas para el espaciado */
+    margin-bottom: 2vh; /* Utilizamos unidades relativas para el margen */
+}
+
+/* Estilos para el párrafo */
+.header p {
+    font-size: 2vh; /* Utilizamos unidades relativas para el tamaño del texto */
+    margin-bottom: 2vh; /* Utilizamos unidades relativas para el margen */
+    text-align: center;
+}
+
+/* Estilo para los iconos */
+symbol {
+    fill: white; /* Color de relleno blanco con !important */
+}
+
+.icons{
+    margin-bottom:35px;
+    margin-top: 0px;
+    width: 10px;
+    height: 10px;
+}
+
+
+/* Estilos para la barra de búsqueda */
+.barraSearch {
+    width: 30px;
+    background-color: rgba(211, 211, 211, 0.2);
+    border-radius: 4%;
+    border-bottom: 3px solid #4CAF50; 
+    box-shadow: 0 0.4vh 0.8vh rgba(0, 0, 0, 0.1);
+}
+
+.barraSearch button{
+    width: 0;
+}
+/* Estilos para el input de texto */
+.barraSearch input[type="text"] {
+    padding-left: 10px;
+    width: 80PX;
+    border: none;
+    border-radius: 0;
+    width: 10%;
+    font-family: Georgia;
+    font-size: 1.8vh; 
+    letter-spacing: 0.1vw; 
+    background-color: transparent;
+}
+
+/* Estilos para el placeholder del input */
+.barraSearch input[type="text"]::placeholder {
+    color: #fff;
+}
+
+/* Estilos para el botón de búsqueda */
+.barraSearch button {
+    background-color: transparent;
+    color: #4CAF50;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+/* Cambios de estilo al pasar el cursor sobre el botón */
+.barraSearch button:hover {
+    color: #333333;
+    border-bottom: 0.2vh solid #333333; /* Utilizamos unidades relativas para el grosor del borde */
+}
+
+/* Estilo para el input de texto cuando está enfocado */
+.barraSearch input[type="text"]:focus {
+    outline: none; /* Quitamos el contorno predeterminado */
+    border-color: transparent; /* Hacemos el borde transparente */
+}
+
+
+/* Estilos para el icono */
+svg {
+    width: 3vh; /* Utilizamos unidades relativas para el tamaño */
+    height: 3vh;
+}
+
+/* Estilos para la barra de navegación */
+.navbar-personalizado {
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+}
+
+/* Estilos para los botones de la barra de navegación */
+.navbar-personalizado button {
+    background-color: transparent;
+    color: #4CAF50;
+    font-size: 2.5vh; /* Utilizamos unidades relativas para el tamaño del texto */
+    border: none;
+    color: rgba(0, 0, 0, 0.5);
+    gap: 1vw; /* Utilizamos unidades relativas para el espacio entre los botones */
+    border-bottom: 0.3vh solid transparent;
+    transition: border-bottom 0.3s;
+}
+
+/* Estilos para los botones de la barra de navegación al pasar el cursor */
+.navbar-personalizado button:hover {
+    color: #333333;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-bottom: 0.5vh solid #4CAF50; /* Utilizamos unidades relativas para el grosor del borde */
+}
+
+h5 {
+    color:#333
+}
+
+.card-complete{
+    background-color: #f3f2f2
+}
+
+.variedad-img{
+    padding:0;
+    width: 140px;
+    height: 140px;
+}

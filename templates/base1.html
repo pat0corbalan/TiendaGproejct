@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header class="bg-dark text-white p-4">
+        {% if negocio[4] %}
+        {% if negocio and len(negocio) >= 10 %}
+    <img src="{{ url_for('static', filename='img/' + negocio[8]) }}" class="rounded-circle img-thumbnail" alt="Logo del negocio">
+{% endif %}
+        {% else %}
+        <p>Impulsado por @gproject</p>
+        <p>Sin imagen</p>
+        {% endif %}
+        <h1>{{ negocio[1] }}</h1>
+        <p>{{ negocio[5] }}</p>
+        <div class="linea-separadora"></div>
+        <p>Horarios de atención: {{ negocio[7] }}</p>
+        <p>Rubro: {{ negocio[8] }}</p>
+        
+        <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    
+        <div class="search-bar">
+            <span class="input-group-prepend">
+                <div class="input-group-text bg-transparent">
+                    <i class="fas fa-search text-white"></i>
+                </div>
+            </span>
+            <input class="form-control py-2 border-right-0 border border-bottom-0 border-top-0 mat-autocomplete-trigger" id="barraSearch" placeholder="¿Qué estás buscando?" type="search">
+            <span class="input-group-append">
+                <div class="input-group-text bg-white border-left-0">
+                    <i class="fa fa-times btnClear" id="hacerClickeable"></i>
+                </div>
+            </span>
+        </div>        
+        
+    </header>
+    
+    <nav class="navbar">
+        <div class="container">
+            <button class="btn btn-primary">Productos</button>
+            <button class="btn btn-secondary">Carrito</button>
+        </div>
+    </nav>
+    <main class="container mt-4">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="bg-dark text-white p-4 text-center">
+        <p>&copy; {{ negocio[1] }} - Todos los derechos reservados</p>
+    </footer>
+    <script src="/app/static/js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
